@@ -154,30 +154,6 @@ account
 
 Requesting an high number of fields may cause the response time to visibly increase, you should always request only the fields you really need.
 
-#### Create Objects
-
-```javascript
-const adsSdk = require('facebook-nodejs-business-sdk');
-const accessToken = '<VALID_ACCESS_TOKEN>';
-const api = adsSdk.FacebookAdsApi.init(accessToken);
-const AdAccount = adsSdk.AdAccount;
-const Campaign = adsSdk.Campaign;
-const account = new AdAccount('act_<AD_ACCOUNT_ID>');
-account
-  .createCampaign(
-    [],
-    {
-      [Campaign.Fields.name]: 'Page likes campaign',
-      [Campaign.Fields.status]: Campaign.Status.paused,
-      [Campaign.Fields.objective]: Campaign.Objective.page_likes
-    }
-  )
-  .then((campaign) => {
-  })
-  .catch((error) => {
-  });
-```
-
 #### Update Objects
 
 ```javascript
